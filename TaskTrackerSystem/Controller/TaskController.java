@@ -58,11 +58,11 @@ public class TaskController {
     }
 
     @GetMapping("/search/{title}")
-    public Object searchTasks(@PathVariable String title){
+    public Task searchTasks(@PathVariable String title){
         for(Task task : tasks){
             if(task.getTitle().equals(title))
                 return task;
         }
-        return new ApiResponse("Task not found");
+        return null;
     }
 }
